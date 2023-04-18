@@ -1,0 +1,64 @@
+code
+// Classe abstrata que representa um animal
+abstract class Animal {
+    private String nome;
+
+    // Construtor
+    public Animal(String nome) {
+        this.nome = nome;
+    }
+
+    // Método abstrato para emitir um som
+    public abstract void emitirSom();
+
+    // Método getter para obter o nome do animal
+    public String getNome() {
+        return nome;
+    }
+
+    // Método setter para definir o nome do animal
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+// Classe que representa um cão, que herda da classe Animal
+class Cao extends Animal {
+    // Construtor
+    public Cao(String nome) {
+        super(nome);
+    }
+
+    // Implementação do método abstrato emitirSom()
+    @Override
+    public void emitirSom() {
+        System.out.println("O cão " + getNome() + " está latindo.");
+    }
+}
+
+// Classe que representa um gato, que herda da classe Animal
+class Gato extends Animal {
+    // Construtor
+    public Gato(String nome) {
+        super(nome);
+    }
+
+    // Implementação do método abstrato emitirSom()
+    @Override
+    public void emitirSom() {
+        System.out.println("O gato " + getNome() + " está miando.");
+    }
+}
+
+// Classe principal que contém o método main()
+public class ProgramaPOO {
+    public static void main(String[] args) {
+        // Criação de objetos das classes Cao e Gato
+        Cao cao = new Cao("Pluto");
+        Gato gato = new Gato("Garfield");
+
+        // Chamada dos métodos emitirSom() dos objetos criados
+        cao.emitirSom();
+        gato.emitirSom();
+    }
+}
